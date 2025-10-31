@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saffron Kingdom | A Cinematic Journey</title>
+  <meta name="description" content="Experience Saffron Kingdom - a cinematic exploration of heritage, resilience, and community. Watch the official trailer and discover more about this compelling story.">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Saffron Kingdom | A Cinematic Journey">
+  <meta property="og:description" content="A cinematic exploration of heritage, resilience, and community. Watch the official trailer.">
+  <meta property="og:image" content="https://img.youtube.com/vi/Mcz-Ke_W4ow/maxresdefault.jpg">
+  <meta property="og:url" content="https://saffronkingdom.com">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saffron Kingdom | A Cinematic Journey">
+  <meta name="twitter:description" content="A cinematic exploration of heritage, resilience, and community.">
+  <meta name="twitter:image" content="https://img.youtube.com/vi/Mcz-Ke_W4ow/maxresdefault.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Animated Background -->
+  <div class="bg-animation">
+    <div class="bg-gradient"></div>
+    <div class="bg-pattern"></div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+  </div>
+  
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="header-content">
+        <h1 class="site-title">Saffron Kingdom</h1>
+        <p class="tagline">A Cinematic Journey</p>
+      </div>
+      <div class="header-decoration"></div>
+    </header>
+
+    <main class="container">
+      <section class="video-section">
+        <div class="section-intro">
+          <h2 class="section-label">Watch the Film</h2>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/Mcz-Ke_W4ow" title="Saffron Kingdom Movie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="about">
+        <h2>About the Movie</h2>
+        <div class="about-content">
+          <p class="lead">
+            <em>Saffron Kingdom</em> is a powerful cinematic experience that weaves together themes of heritage, resilience, and the profound journeys that shape communities across generations.
+          </p>
+          <p>
+            Through compelling storytelling and evocative visuals, the film explores the intricate tapestry of cultural identity, personal transformation, and collective memory. It invites audiences to reflect on the stories that define us and the connections that bind us together.
+          </p>
+          <p>
+            Discover the full story, meet the creative team, and explore behind-the-scenes insights at Daffodil Studios.
+          </p>
+          <div class="cta-wrapper">
+            <a class="cta" href="https://www.daffodilstudios.org/" target="_blank" rel="noopener noreferrer">
+              <span>Explore More</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-content">
+        <p>&copy; <span id="year"></span> Saffron Kingdom. All rights reserved.</p>
+        <p class="footer-credit">A film by <a href="https://www.daffodilstudios.org/" target="_blank" rel="noopener noreferrer">Daffodil Studios</a></p>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Set the current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Add smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    
+    // Add fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.about, .video-section').forEach(el => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>
