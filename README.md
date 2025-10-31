@@ -4,7 +4,9 @@ A beautiful, animated static website showcasing the Saffron Kingdom film with an
 
 ## 🌐 Live Site
 
-Visit: **https://zayeemzaki.github.io/saffron-kingdom/**
+Visit: **https://www.saffronkingdomfilm.com/**
+
+Alternative: https://zayeemzaki.github.io/saffron-kingdom/
 
 ## ✨ Features
 
@@ -27,6 +29,35 @@ This site is automatically deployed to GitHub Pages via GitHub Actions whenever 
 3. Under "Build and deployment":
    - Source: **GitHub Actions**
 4. Push to main branch - the workflow will deploy automatically
+
+### Custom Domain Setup
+
+The site is configured to use **www.saffronkingdomfilm.com**. To complete the setup:
+
+1. **Configure DNS** (at your domain registrar - e.g., Squarespace, Namecheap, etc.):
+   ```
+   Type: CNAME
+   Host: www
+   Value: zayeemzaki.github.io
+   TTL: 3600 (or Auto)
+   ```
+
+2. **Add Apex Domain (optional)** - For `saffronkingdomfilm.com` to redirect to `www`:
+   ```
+   Type: A Records (add all 4)
+   Host: @
+   Value: 185.199.108.153
+   Value: 185.199.109.153
+   Value: 185.199.110.153
+   Value: 185.199.111.153
+   ```
+
+3. **Enable HTTPS** in GitHub Pages settings after DNS propagates (15-60 minutes)
+
+4. **Verify** in GitHub:
+   - Go to Settings → Pages
+   - Under "Custom domain", enter: `www.saffronkingdomfilm.com`
+   - Check "Enforce HTTPS" once available
 
 ## 💻 Local Development
 
